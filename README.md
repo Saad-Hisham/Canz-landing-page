@@ -45,7 +45,9 @@ A modern, interactive landing page for **CANZ**, designed with immersive visuals
 - React  
 - Three.js / React Three Fiber  
 - JavaScript (ES6+)  
-- CSS / Tailwind  
+- CSS
+- Material UI
+- Blender
 
 ---
 
