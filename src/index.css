@@ -90,7 +90,6 @@ p {
 .container {
     width: 100%;
     max-width: min(100%, 42rem);
-    margin-left: clamp(.5rem, 11vw, 5rem);
     margin-right: auto;
     padding-right: clamp(0.5rem, 2vw, 1rem);
 }
@@ -493,7 +492,7 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-sizeMedium.Mui
 
 /* FAQ Section */
 .faq {
-    padding: 6rem 0;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 2rem);
     background-color: #f9f9f9;
 }
 
@@ -501,20 +500,24 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-sizeMedium.Mui
     text-align: center;
     font-family: 'Pacifico', cursive;
     color: var(--accent-color);
-    font-size: 3rem;
-    margin-bottom: 4rem;
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+    word-break: break-word;
 }
 
 .faq-list {
     max-width: 800px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 1.5rem);
+    box-sizing: border-box;
 }
 
 .faq-item {
     background: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
     border-radius: 1rem;
-    padding: 1.5rem 2rem;
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem);
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
     transition: all 0.3s ease;
@@ -527,24 +530,32 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-sizeMedium.Mui
 .faq-question {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 .faq-question h3 {
-    font-size: 1.2rem;
+    font-size: clamp(0.95rem, 3vw, 1.2rem);
     font-family: sans-serif;
     color: #333;
+    line-height: 1.4;
 }
 
 .faq-question span {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
     font-weight: bold;
     color: var(--accent-color);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
 }
 
 .faq-answer {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
+    margin-top: clamp(1rem, 3vw, 1.5rem);
+    padding-top: clamp(1rem, 3vw, 1.5rem);
     border-top: 1px solid #eee;
 }
 
@@ -553,6 +564,7 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-sizeMedium.Mui
     font-weight: normal;
     color: #666;
     line-height: 1.6;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 @media (max-width: 768px) {
