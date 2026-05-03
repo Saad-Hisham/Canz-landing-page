@@ -5,6 +5,9 @@ import Hero from './Components/Hero'
 import Navbar from './Components/Navbar'
 import Flavors from './Components/Flavors'
 import Benfits from './Components/benfits'
+import About from './Components/About'
+import Gallery from './Components/Gallery'
+import FAQ from './Components/FAQ'
 import Contact from './Components/contact'
 import LoadingScreen from './Components/LoadingScreen'
 import ScrollProgress from './Components/ScrollProgress'
@@ -66,6 +69,7 @@ function App() {
       <Hero flavor={flavor} setFlavor={setFlavor} />
       <Flavors />
       <Benfits flavor={flavor} />
+      <FAQ />
       <Contact flavor={flavor} />
     </>
   )

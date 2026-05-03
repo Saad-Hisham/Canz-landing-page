@@ -278,23 +278,80 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-sizeMedium.Mui
 }
 
 .flavor-item {
-    background: #fff;
+    background: transparent;
     border-radius: 1.5rem;
-    padding: 2rem;
+    padding: 0;
     flex: 1;
     min-width: 280px;
     max-width: 350px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 450px;
+    perspective: 1000px;
+    box-shadow: none;
+    transition: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.flavor-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flavor-item:hover .flavor-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flavor-card-front, .flavor-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.flavor-card-front {
+    background-color: #fff;
+}
+
+.flavor-card-back {
+    background-color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flavor-card-back h3 {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.flavor-card-back p {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 90%;
 }
 
 .flavor-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .flavor-item img {
@@ -308,44 +365,208 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-sizeMedium.Mui
 .flavor-item h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-top: auto;
     font-family: sans-serif;
 }
 
 /* Flavor specific backgrounds */
 
+.flavor-item.mango .flavor-card-front,
+.flavor-item.mango .flavor-card-back {
+    background: #fff;
+}
 
 .flavor-item.mango h3 {
     color: #f37021;
 }
 
-.flavor-item.berry {
-    background:#f9f9f9
+.flavor-item.berry .flavor-card-front,
+.flavor-item.berry .flavor-card-back {
+    background: #f9f9f9;
 }
 
 .flavor-item.berry h3 {
     color: #af1fd1;
 }
 
-.flavor-item.classic {
-    background: linear-gradient(145deg, #f8f9fa, #fafafa)
+.flavor-item.classic .flavor-card-front,
+.flavor-item.classic .flavor-card-back {
+    background: linear-gradient(145deg, #f8f9fa, #fafafa);
 }
 
 .flavor-item.classic h3 {
     color: #bdca14;
 }
 
+/* About Section */
+.about {
+    padding: 6rem 0;
+    background-color: #fdfdfd;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+}
+
+.about-content h2 {
+    font-family: 'Pacifico', cursive;
+    color: var(--accent-color);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.about-content p {
+    font-family: sans-serif;
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-item h4 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    font-family: 'Pacifico', cursive;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 6rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.gallery h2 {
+    font-family: 'Pacifico', cursive;
+    color: var(--accent-color);
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    height: 300px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 2rem;
+    background: #f9f9f9;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* FAQ Section */
+.faq {
+    padding: 6rem 0;
+    background-color: #f9f9f9;
+}
+
+.faq h2 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: var(--accent-color);
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #fff;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.faq-question span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.faq-answer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.faq-answer p {
+    font-family: sans-serif;
+    font-weight: normal;
+    color: #666;
+    line-height: 1.6;
+}
+
 @media (max-width: 768px) {
-    .flavors h2 {
-        font-size: 2rem;
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
     
-    .flavor-list {
-        gap: 1.5rem;
+    .about-image {
+        order: -1;
     }
     
-    .flavor-item {
-        min-width: 100%;
+    .about-stats {
+        justify-content: center;
     }
 }
 

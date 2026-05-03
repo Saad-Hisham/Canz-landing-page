@@ -44,18 +44,42 @@ const Flavors = () => {
         <h2>Discover Our Flavors</h2>
         <div className='flavor-list'>
             <div className='flavor-item mango'>
-                <img src={orangeFlavor} alt='Tropical Mango' />
-                <h3>Orange</h3>
+                <div className="flavor-card-inner">
+                    <div className="flavor-card-front">
+                        <img src={orangeFlavor} alt='Tropical Mango' />
+                        <h3>Orange</h3>
+                    </div>
+                    <div className="flavor-card-back">
+                        <h3>Orange</h3>
+                        <p>Experience the sun-kissed sweetness of ripe oranges in every sip. Pure refreshment, naturally energized.</p>
+                    </div>
+                </div>
             </div>
 
             <div className='flavor-item berry'>
-                <img src={berryFlavor} alt='Berry Blast' />
-                <h3>Berry Blast</h3>
+                <div className="flavor-card-inner">
+                    <div className="flavor-card-front">
+                        <img src={berryFlavor} alt='Berry Blast' />
+                        <h3>Berry Blast</h3>
+                    </div>
+                    <div className="flavor-card-back">
+                        <h3>Berry Blast</h3>
+                        <p>A vibrant explosion of mountain berries. Sweet, tangy, and packed with antioxidants to keep you going.</p>
+                    </div>
+                </div>
             </div>
 
             <div className='flavor-item classic'>
-                <img src={lemonFlavor} alt='Classic' />
-                <h3>Lemon</h3>
+                <div className="flavor-card-inner">
+                    <div className="flavor-card-front">
+                        <img src={lemonFlavor} alt='Classic' />
+                        <h3>Lemon</h3>
+                    </div>
+                    <div className="flavor-card-back">
+                        <h3>Lemon</h3>
+                        <p>The timeless zest of fresh lemons. Crisp, clean, and perfectly balanced for an instant mood lift.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

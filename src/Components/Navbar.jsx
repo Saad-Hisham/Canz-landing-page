@@ -74,8 +74,9 @@ const Navbar = ({ flavor, lenis }) => {
 
       <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
         <li><a href='#hero' onClick={(e) => { e.preventDefault(); handleNavClick('hero') }}>Home</a></li>
-        <li><a href='#flavors' onClick={(e) => { e.preventDefault(); handleNavClick('flavors') }}>Flavor</a></li>
+        <li><a href='#flavors' onClick={(e) => { e.preventDefault(); handleNavClick('flavors') }}>Flavors</a></li>
         <li><a href='#benefits' onClick={(e) => { e.preventDefault(); handleNavClick('benefits') }}>Benefits</a></li>
+        <li><a href='#faq' onClick={(e) => { e.preventDefault(); handleNavClick('faq') }}>FAQ</a></li>
         <li><a href='#contact' onClick={(e) => { e.preventDefault(); handleNavClick('contact') }}>Contact</a></li>
         <li><button className="nav-btn">get yours</button></li>
       </ul>
